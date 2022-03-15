@@ -13,7 +13,7 @@ router.get('/', async(req, res) => {
         const foundBlogs = await Blog.find({})
         res.status(200).json(foundBlogs)
     }catch(error){
-        console.error(err);
+        console.error(error);
         res.status(400).json({ message: error.message });
     }
 }
@@ -26,7 +26,7 @@ router.get('/:id', async(req, res) => {
         const foundBlog = await Blog.findById(req.params.id)
         res.status(200).json(foundBlog)
     }catch(error){
-        console.error(err);
+        console.error(error);
         res.status(400).json({ message: error.message });
     }
 }
