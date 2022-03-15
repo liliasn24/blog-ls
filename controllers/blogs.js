@@ -32,5 +32,17 @@ router.get('/:id', async(req, res) => {
 }
 
 //update
+//update the blog
+router.put('/:id', async (req, res) => {
+    try {
+      const updatedBlog = await Blog.findByIdAndUpdate(req.params.id, req.body, { new: true })
+      res.status(200).json(updatedBlog)
+    }catch(error){
+      console.error(error);
+      res.status(400).json({ message: error.message })
+    }
+  })
+
+//add comment
 
 //delete
