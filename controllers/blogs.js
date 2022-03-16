@@ -45,4 +45,27 @@ router.put('/:id', async (req, res) => {
 
 //add comment
 
+router.put('/:id/addComment', (req, res) => {
+    //store the query
+    const createCommentQuery = Comment.create(req.body)
+    // actually run query
+    createCommentQuery.exec((err, createdComment) => {
+      if (err){
+        console.error(err);
+        res.status(400).json({ message: err.message});
+      } else {
+        const updateBlogQuery = Blog.findByIdAndUpdate(req.params.id, { $addToSet: { comments: createdComment._id }}, { new: true })
+        // actually run it
+        updateBlogQuery.exec((err, updatedBlog) => {
+              if(err){
+                console.error(err);
+                res.status(400).json({ message: err.message })
+              } else {
+                res.status(200).json(createdComment)
+              }
+        })
+      }
+    })
+  })
+
 //delete
