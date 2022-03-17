@@ -69,3 +69,13 @@ router.put('/:id/addComment', (req, res) => {
   })
 
 //delete
+
+router.delete('/:id', async (req, res) => {
+  try{
+    const deletedBlog = await Blog.findByIdAndDelete(req.params.id);
+    res.status(200).json(deletedBlog)
+  }catch(error){
+    console.error(error);
+    res.status(400).json({ message: error.message})
+  }
+})
