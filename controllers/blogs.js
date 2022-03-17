@@ -5,6 +5,17 @@ const router = require('express').Router();
 
 //create
 
+router.post('/', async(req, res) => {
+  try{
+    const createdBlog = await Blog.create(req.body)
+    res.status(200).json(createdBlog)
+  }catch(error){
+    console.error(error)
+    res.status(400).json({ message: error.message})
+  }
+})
+
+
 //read (index & show)
 
 //index
