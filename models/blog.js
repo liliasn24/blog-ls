@@ -1,11 +1,12 @@
 const { Schema, model } = require('mongoose');
 
-//create schema
+// Make schema = Bouncer at the club
 
 const blogSchema = new Schema(
 	{
 		title: { type: String, required: true, unique: true },
-		body: String
+		body: String,
+		comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }]
 	},
 	{
 		timestamps: true
