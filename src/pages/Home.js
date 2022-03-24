@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Home(props) {
 	const [blogs, setBlogs] = useState([]);
@@ -21,7 +22,9 @@ export default function Home(props) {
 				{blogs.map(blog => {
 					return (
 						<li key={blog._id}>
-							<h3>{blog.title}</h3>
+							<Link to={`/${blog._id}`}>
+								<h3>{blog.title}</h3>
+							</Link>
 							<p>{blog.body}</p>
 						</li>
 					);
