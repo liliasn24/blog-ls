@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-export default function Home(props) {
+export default function Show(props) {
 	const [blog, setBlog] = useState({});
 
 	useEffect(() => {
@@ -16,7 +16,7 @@ export default function Home(props) {
 	}, []);
 
 	return (
-		<div className="HomePage">
+		<div className="ShowPage">
 			{Object.keys(blog).length ? (
 				<>
 					<h3>{blog.title}</h3>
