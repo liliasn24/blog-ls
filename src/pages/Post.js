@@ -14,22 +14,22 @@ export default function Show(props) {
 				console.error(error);
 			}
 		})();
-		const handleDelete = async e => {
-			try {
-				const response = await fetch(`/api/blogs/${props.match.params.id}`, {
-					method: 'DELETE',
-					headers: {
-						'Content-Type': 'application/json'
-					}
-				});
-				const deletedBlog = await response.json();
-			} catch (error) {
-				console.error(error);
-			} finally {
-				window.location.assign('/');
-			}
-		};
 	}, []);
+	const handleDelete = async e => {
+		try {
+			const response = await fetch(`/api/blogs/${props.match.params.id}`, {
+				method: 'DELETE',
+				headers: {
+					'Content-Type': 'application/json'
+				}
+			});
+			const deletedBlog = await response.json();
+		} catch (error) {
+			console.error(error);
+		} finally {
+			window.location.assign('/');
+		}
+	};
 
 	return (
 		<div className="ShowPage">
