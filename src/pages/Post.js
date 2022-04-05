@@ -1,7 +1,6 @@
-import { response } from 'express';
 import React, { useEffect, useState } from 'react';
 
-export default function Show(props) {
+export default function Home(props) {
 	const [blog, setBlog] = useState({});
 
 	useEffect(() => {
@@ -15,6 +14,7 @@ export default function Show(props) {
 			}
 		})();
 	}, []);
+
 	const handleDelete = async e => {
 		try {
 			const response = await fetch(`/api/blogs/${props.match.params.id}`, {
@@ -32,12 +32,12 @@ export default function Show(props) {
 	};
 
 	return (
-		<div className="ShowPage">
+		<div className="HomePage">
 			{Object.keys(blog).length ? (
 				<>
 					<h3>{blog.title}</h3>
 					<p>{blog.body}</p>
-					<button onClick={handleDelete}>Delete me</button>
+					<button onClick={handleDelete}>Delete Me</button>
 				</>
 			) : (
 				<h1>Loading...</h1>
