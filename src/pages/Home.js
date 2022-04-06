@@ -1,8 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Home(props) {
 	const [blogs, setBlogs] = useState([]);
+	const titleInput = useRef(null);
+	const bodyInput = useRef(null);
+
+	const handleUpdate = async e => {
+		e.preventDefault();
+		try {
+			const response = await fetch(`/api/blogs/${props.match.params.id}`), {
+				method: 'PUT',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body:JSON.stringify({
+					title: titleInput.current.value,
+					body: bodyInput.current.value
+				})
+			})
+		} catch (error) {
+			console.error(error);
+		}
+	};
 
 	useEffect(() => {
 		(async () => {
