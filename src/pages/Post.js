@@ -65,19 +65,25 @@ export default function Show(props) {
 				<h1>Loading...</h1>
 			)}
 			<form
+				class="form-group"
 				style={{ display: 'flex', flexDirection: 'column' }}
 				onSubmit={handleUpdate}
 			>
 				<label>
 					{' '}
 					Title:{' '}
-					<input type="text" ref={titleInput} defaultValue={blog.title} />
+					<input
+						class="form-control"
+						type="text"
+						ref={titleInput}
+						defaultValue={blog.title}
+					/>
 				</label>
 				<label>
 					{' '}
 					Body: <input type="text" ref={bodyInput} defaultValue={blog.body} />
 				</label>
-				<input type="submit" value="Update MicroBlog" />
+				<input class="form-control" type="submit" value="Update MicroBlog" />
 			</form>
 		</div>
 	);
