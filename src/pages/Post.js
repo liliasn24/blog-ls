@@ -1,7 +1,29 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
-export default function Home(props) {
+export default function Show(props) {
 	const [blog, setBlog] = useState({});
+	const titleInput = useRef(null);
+	const bodyInput = useRef(null);
+
+	const handleUpdate = async e => {
+		e.preventDefault();
+		try {
+			const response = await fetch(`/api/blogs/${props.match.params.id}`, {
+				method: 'PUT',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					title: titleInput.current.value,
+					body: bodyInput.current.value
+				})
+			});
+			const data = await response.json();
+			setBlog(data);
+		} catch (error) {
+			console.error(error);
+		}
+	};
 
 	useEffect(() => {
 		(async () => {
