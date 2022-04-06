@@ -21,7 +21,7 @@ export default function Home(props) {
 				})
 			});
 			const data = await response.json();
-			setBlogs(data);
+			setBlog(data);
 		} catch (error) {
 			console.error(error);
 		}
