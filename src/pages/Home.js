@@ -1,4 +1,4 @@
-import { response } from 'express';
+// import { response } from 'express'; (this code appears on its own and causes the fs module not found error)
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -10,18 +10,18 @@ export default function Home(props) {
 	const handleUpdate = async e => {
 		e.preventDefault();
 		try {
-			const response = await fetch(`/api/blogs/${props.match.params.id}`), {
+			const response = await fetch(`/api/blogs/${props.match.params.id}`, {
 				method: 'PUT',
 				headers: {
-					Content-Type: 'application/json'
+					'Content-Type': 'application/json'
 				},
 				body: JSON.stringify({
 					title: titleInput.current.value,
 					body: bodyInput.current.value
 				})
-			})
-			const data = await response.json()
-			setBlogs(data)
+			});
+			const data = await response.json();
+			setBlogs(data);
 		} catch (error) {
 			console.error(error);
 		}
