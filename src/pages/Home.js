@@ -30,6 +30,10 @@ export default function Home(props) {
 		}
 	};
 
+	const handleChange = e => {
+		setBlog({ ...singleBlog, [e.target.id]: e.target.value });
+	};
+
 	useEffect(() => {
 		(async () => {
 			try {
