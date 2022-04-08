@@ -4,6 +4,31 @@ import { Link } from 'react-router-dom';
 
 export default function Home(props) {
 	const [blogs, setBlogs] = useState([]);
+	const [singleBlog, setBlog] = useState({
+		title: '',
+		body: ''
+	});
+
+	const handleSubmit = async e => {
+		e.preventDefault();
+		try {
+			const response = await fetch('/api/bookmarks', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(singleBlog)
+			});
+			const data = await response.json();
+			setBlogs([...bookmarks, data]);
+			setBlog({
+				title: '',
+				body: ''
+			});
+		} catch (error) {
+			console.error(error);
+		}
+	};
 
 	useEffect(() => {
 		(async () => {
