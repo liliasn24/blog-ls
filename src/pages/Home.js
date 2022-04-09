@@ -9,6 +9,17 @@ export default function Home(props) {
 		body: ''
 	});
 
+	useEffect(() => {
+		(async () => {
+			try {
+				const response = await fetch('/api/blogs');
+				const data = await response.json();
+				setBlogs(data);
+			} catch (error) {
+				console.error(error);
+			}
+		})();
+	}, []);
 	const handleSubmit = async e => {
 		e.preventDefault();
 		try {
@@ -33,21 +44,28 @@ export default function Home(props) {
 	const handleChange = e => {
 		setBlog({ ...singleBlog, [e.target.id]: e.target.value });
 	};
-
-	useEffect(() => {
-		(async () => {
-			try {
-				const response = await fetch('/api/blogs');
-				const data = await response.json();
-				setBlogs(data);
-			} catch (error) {
-				console.error(error);
-			}
-		})();
-	}, []);
-
 	return (
 		<div className="HomePage">
+			<h1>List of Blogs</h1>
+			<div>
+				<form>
+					<label>Add New Blog Title</label>
+					<input
+						type="text"
+						id="title"
+						value={singleBlog.title}
+						onChange={handleChange}
+					/>
+					<label>Add New Blog Text</label>
+					<input
+						type="text"
+						id="body"
+						value={singleBlog.body}
+						onChange={handleChange}
+					/>
+					<input type="submit" value="Submit" />
+				</form>
+			</div>
 			<ul>
 				{blogs.map(blog => {
 					return (
