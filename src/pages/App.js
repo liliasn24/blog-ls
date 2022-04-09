@@ -74,6 +74,7 @@ export default function Home(props) {
 								<h3>{blog.title}</h3>
 							</Link>
 							<p>{blog.body}</p>
+							<p>{blog.createdAt}</p>
 						</li>
 					);
 				})}

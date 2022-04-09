@@ -54,8 +54,8 @@ export default function Home(props) {
 						<li key={blog._id}>
 							<Link to={`/${blog._id}`}>
 								<h3>{blog.title}</h3>
+								<p>{blog.createdAt}</p>
 							</Link>
-							<p>{blog.body}</p>
 						</li>
 					);
 				})}
