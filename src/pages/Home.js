@@ -20,10 +20,11 @@ export default function Home(props) {
 			}
 		})();
 	}, []);
+
 	const handleSubmit = async e => {
 		e.preventDefault();
 		try {
-			const response = await fetch('/api/bookmarks', {
+			const response = await fetch('/api/blogs', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -31,7 +32,7 @@ export default function Home(props) {
 				body: JSON.stringify(singleBlog)
 			});
 			const data = await response.json();
-			setBlogs([...bookmarks, data]);
+			setBlogs([...blogs, data]);
 			setBlog({
 				title: '',
 				body: ''
@@ -48,7 +49,7 @@ export default function Home(props) {
 		<div className="HomePage">
 			<h1>List of Blogs</h1>
 			<div>
-				<form>
+				<form onSubmit={handleSubmit}>
 					<label>Add New Blog Title</label>
 					<input
 						type="text"
