@@ -47,8 +47,8 @@ export default function Home(props) {
 	};
 	return (
 		<div className="HomePage">
-			<div>
-				<h1>Welcome to this space</h1>
+			<div class="jumbotron text-center">
+				<h1 class="display-4">Welcome to my website</h1>
 
 				<p>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quas
