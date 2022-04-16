@@ -47,7 +47,38 @@ export default function Home(props) {
 	};
 	return (
 		<div className="HomePage">
+			<div>
+				<h1>Welcome to this space</h1>
+
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quas
+					ducimus officiis dolorum vitae odit accusantium praesentium neque
+					minima velit quasi suscipit voluptates, iusto esse voluptatibus id
+					dignissimos, adipisci illum deserunt beatae. Harum, officia beatae ex
+					tempore cupiditate molestiae esse optio quidem id accusamus placeat.
+					Quo nobis amet libero. Numquam optio quia, praesentium labore maxime
+					deserunt illo quod, pariatur culpa sint consectetur beatae nobis
+					sapiente sed omnis unde rem quae mollitia error possimus, natus
+					provident voluptatem tempore? Blanditiis reprehenderit perferendis
+					odit sed praesentium repellendus consequuntur. Voluptatibus quidem ex
+					voluptatum explicabo ab deleniti! Pariatur fuga architecto enim,
+					magnam blanditiis accusantium fugiat?
+				</p>
+			</div>
+
 			<h1>List of Blogs</h1>
+			<form action="/" method="get">
+				<label htmlFor="header-search">
+					<span className="visually-hidden">Search blog posts</span>
+				</label>
+				<input
+					type="text"
+					id="header-search"
+					placeholder="Search blog posts"
+					name="s"
+				/>
+				<button type="submit">Search</button>
+			</form>
 			<ul>
 				{blogs.map(blog => {
 					return (

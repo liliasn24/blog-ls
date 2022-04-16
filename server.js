@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 8000;
 const mongoose = require('mongoose');
 const path = require('path');
 const blogController = require('./controllers/blogs.js');
+// const { hash, register } = require('./controllers/auth');
 
 const MONGODB_URI = process.env.MONGODB_URI;
 const db = mongoose.connection;
@@ -22,8 +23,9 @@ if (process.env.NODE_ENV !== 'development') {
 	app.use(express.static('public'));
 }
 
-/* Controller Goes Here Remove the tes*/
+/* Controller Goes Here Remove the test*/
 app.use('/api/blogs', blogController);
+// app.post('/api/blogs/register', register);
 /* Controller Ends here */
 //LISTENER
 
