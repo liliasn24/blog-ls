@@ -54,52 +54,56 @@ export default function Show(props) {
 	};
 
 	return (
-		<div class="jumbotron">
+		<div className="jumbotron">
 			<div>
 				{Object.keys(blog).length ? (
 					<>
-						<h3 class="text-center">{blog.title}</h3>
-						<p class="text-center mt-5 mb-5">{blog.body}</p>
+						<h3 className="text-center">{blog.title}</h3>
+						<p className="text-center mt-5 mb-5">{blog.body}</p>
 					</>
 				) : (
 					<h1>Loading...</h1>
 				)}
 			</div>
 
-			<div class="container">
+			<div className="container">
 				<form
 					// style={{ display: 'flex', flexDirection: 'column' }}
 					onSubmit={handleUpdate}
 				>
-					<div class="form-group">
+					<div className="form-group">
 						<label>
 							{' '}
 							Title:{' '}
 							<input
-								class="form-control"
+								className="form-control"
 								type="text"
 								ref={titleInput}
 								defaultValue={blog.title}
 							/>
 						</label>
 					</div>
-					<div class="form-group">
+					<div className="form-group">
 						<label>
 							{' '}
 							Body:{' '}
 							<textarea
-								class="form-control"
+								className="form-control"
 								type="text"
 								ref={bodyInput}
 								defaultValue={blog.body}
 							/>
 						</label>
 						<input
-							class="form-control btn btn-success"
+							className="form-control btn btn-success"
 							type="submit"
 							value="Update MicroBlog"
 						/>
-						<button type="button" class="btn btn-danger" onClick={handleDelete}>
+						<button
+							type="button"
+							className="btn btn-danger"
+							onClick={handleDelete}
+						>
 							Delete Me
 						</button>
 					</div>

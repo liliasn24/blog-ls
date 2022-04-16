@@ -46,11 +46,11 @@ export default function Home(props) {
 		setBlog({ ...singleBlog, [e.target.id]: e.target.value });
 	};
 	return (
-		<div className="HomePage">
-			<div class="jumbotron text-center">
-				<h1 class="display-4">Welcome to my website</h1>
+		<div>
+			<div className="jumbotron text-center">
+				<h1 className="display-4">Welcome to my website</h1>
 
-				<p>
+				<p className="lead">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quas
 					ducimus officiis dolorum vitae odit accusantium praesentium neque
 					minima velit quasi suscipit voluptates, iusto esse voluptatibus id
@@ -65,32 +65,33 @@ export default function Home(props) {
 					magnam blanditiis accusantium fugiat?
 				</p>
 			</div>
-
-			<h1>List of Blogs</h1>
-			<form action="/" method="get">
-				<label htmlFor="header-search">
-					<span className="visually-hidden">Search blog posts</span>
-				</label>
-				<input
-					type="text"
-					id="header-search"
-					placeholder="Search blog posts"
-					name="s"
-				/>
-				<button type="submit">Search</button>
-			</form>
-			<ul>
-				{blogs.map(blog => {
-					return (
-						<li key={blog._id}>
-							<Link to={`/${blog._id}`}>
-								<h3>{blog.title}</h3>
-								<p>{blog.createdAt}</p>
-							</Link>
-						</li>
-					);
-				})}
-			</ul>
+			<div className="jumbotron">
+				<h1>List of Blogs</h1>
+				<form action="/" method="get">
+					<label htmlFor="header-search">
+						<span className="visually-hidden">Search blog posts</span>
+					</label>
+					<input
+						type="text"
+						id="header-search"
+						placeholder="Search blog posts"
+						name="s"
+					/>
+					<button type="submit">Search</button>
+				</form>
+				<ul>
+					{blogs.map(blog => {
+						return (
+							<li key={blog._id}>
+								<Link to={`/${blog._id}`}>
+									<h3>{blog.title}</h3>
+									<p>{blog.createdAt}</p>
+								</Link>
+							</li>
+						);
+					})}
+				</ul>
+			</div>
 		</div>
 	);
 }
