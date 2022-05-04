@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 export default function About(props) {
 	return (
-		<div class="jumbotron">
+		<div className="jumbotron">
 			<div>
 				<h1>About me</h1>
 				<p>

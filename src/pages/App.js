@@ -45,7 +45,7 @@ export default function Home(props) {
 		setBlog({ ...singleBlog, [e.target.id]: e.target.value });
 	};
 	return (
-		<div className="HomePage">
+		<div className="jumbotron">
 			<h1>List of Blogs</h1>
 			<div>
 				<form onSubmit={handleSubmit}>
