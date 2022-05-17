@@ -6,7 +6,13 @@ const NavBar = props => {
 		<nav className="navbar navbar-expand-sm navbar-dark bg-dark p-0">
 			<div className="container">
 				{props.routes.map(({ key, path }) => (
-					<Link key={key} to={path}>
+					<Link
+						className="navbar-toggler"
+						date-toggle="collapse"
+						data-target="#navbarCollapse"
+						key={key}
+						to={path}
+					>
 						{key}
 					</Link>
 				))}
