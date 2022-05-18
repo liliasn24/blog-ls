@@ -9,7 +9,7 @@ const NavBar = props => {
 		>
 			<div class="container">
 				<a href="index.html" class="navbar-brand">
-					LoopLAB
+					Lilia Salas
 				</a>
 				<button
 					class="navbar-toggler"
@@ -27,17 +27,17 @@ const NavBar = props => {
 						</li>
 						<li class="nav-item">
 							<a href="#explore-head-section" class="nav-link">
-								Explore
+								About
 							</a>
 						</li>
 						<li class="nav-item">
 							<a href="#create-head-section" class="nav-link">
-								Create
+								Contact
 							</a>
 						</li>
 						<li class="nav-item">
 							<a href="#share-head-section" class="nav-link">
-								Share
+								App
 							</a>
 						</li>
 					</ul>
