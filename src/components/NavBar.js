@@ -3,19 +3,45 @@ import { Link } from 'react-router-dom';
 
 const NavBar = props => {
 	return (
-		<nav className="navbar navbar-expand-sm navbar-dark bg-dark p-0">
-			<div className="container">
-				{props.routes.map(({ key, path }) => (
-					<Link
-						className="navbar-toggler"
-						date-toggle="collapse"
-						data-target="#navbarCollapse"
-						key={key}
-						to={path}
-					>
-						{key}
-					</Link>
-				))}
+		<nav
+			class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top"
+			id="main-nav"
+		>
+			<div class="container">
+				<a href="index.html" class="navbar-brand">
+					LoopLAB
+				</a>
+				<button
+					class="navbar-toggler"
+					data-toggle="collapse"
+					data-target="#navbarCollapse"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+							<a href="#home" class="nav-link">
+								Home
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#explore-head-section" class="nav-link">
+								Explore
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#create-head-section" class="nav-link">
+								Create
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#share-head-section" class="nav-link">
+								Share
+							</a>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</nav>
 	);
