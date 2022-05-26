@@ -106,6 +106,8 @@ export default function Show(props) {
 						>
 							Delete Me
 						</button>
+
+						<button>Add Comment</button>
 					</div>
 				</form>
 			</div>
