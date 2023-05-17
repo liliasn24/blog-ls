@@ -11,7 +11,7 @@ export default function About(props) {
 					esse corrupti nam sed distinctio eligendi earum! Nulla deleniti
 					placeat magnam dolores ratione alias impedit est a magni pariatur
 					debitis vitae et sequi corporis dicta explicabo illo soluta
-					accusantium porro, praesentium laboriosam nam laudantium.
+					accusantium porro, praesentium laboriosam nam laudantium. lslslsls
 				</p>
 			</div>
 
